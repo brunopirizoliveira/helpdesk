@@ -1,0 +1,292 @@
+	<!-- ++++++++++++++++++++ +++
+	++++ TOGGLES LISTA/KANBAN -->
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<button class="btn btn-primary" type="button" id="openKanban"><span class="glyphicon glyphicon-object-align-top"></span> KANBAN</button>
+			<button class="btn btn-primary pull-right" type="button" id="openList"><span class="glyphicon glyphicon-list-alt"></span> LISTA</button>
+		</div>
+	</div>
+	<!-- TOGGLES LISTA/KANBAN ---
+	---- -------------------- -->
+	
+		<!-- KANBAN CHAMADOS POR ÁREA +++
+	++++ ++++++++++++++++++++++++ -->
+	<div id="div_kanban">
+	
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div id="kanban">
+				<ul>
+					<li><a href="#infraEstrutura">Infra-estrutura</a></li>
+					<li><a href="#sistemas">Sistemas</a></li>
+					<li><a href="#telefonia">Telefonia</a></li>
+				</ul>
+				
+				<!-- INFRA-ESTRUTURA +++
+				++++ +++++++++++++++++++ -->
+				<div id="infraEstrutura">
+				
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 well kanban" id="infraEstruturaAberto">
+					<div class="titulo">
+						Aguardando
+					</div>
+					<!-- START BLOCK : infraEstruturaAberto -->
+					<div class="cards">
+						<div class="prior {cssprior}"> <!-- Esta tag deve conter qualquer uma das seguintes propriedades: prior-urgente/alta/media/baixa -->
+							Chamado {chamadoId}
+							<div class="direita">
+								{chamadoAbertura}
+							</div>
+						</div>
+						<strong>{chamadoTitulo}...</strong><br />
+						<div class="descricao">
+							{chamadoDescricao}<br />
+						</div>
+						<div class="cards-bottom">
+							<strong>Solicitante:</strong> {chamadoAutor}<br />
+							<strong>Categoria:</strong> {chamadoCategoria}
+							<div class="direita">
+								<strong>Tipo:</strong> {chamadoTipo}
+							</div>
+						</div>
+					</div>
+					<!-- END BLOCK : infraEstruturaAberto -->
+				</div>
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 well kanban" id="infraEstruturaAndamento">
+					<div class="titulo">
+						Em andamento
+					</div>
+					<!-- START BLOCK : infraEstruturaAndamento -->
+					<div class="cards">
+						<div class="prior {cssprior}"> <!-- Esta tag deve conter qualquer uma das seguintes propriedades: prior-urgente/alta/media/baixa -->
+							Chamado {chamadoId}
+							<div class="direita">
+								{chamadoAbertura}
+							</div>
+						</div>
+						<strong>{chamadoTitulo}...</strong><br />
+						<div class="descricao">
+							{chamadoDescricao}<br />
+						</div>
+						<div class="cards-bottom">
+							<strong>Solicitante:</strong> {chamadoAutor}<br />
+							<strong>Categoria:</strong> {chamadoCategoria}
+							<div class="direita">
+								<strong>Tipo:</strong> {chamadoTipo}
+							</div>
+						</div>
+					</div>
+					<!-- END BLOCK : infraEstruturaAndamento -->
+				</div>
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 well kanban" id="infraEstruturaConcluido">
+					<div class="titulo">
+						Concluído
+					</div>
+					<!-- START BLOCK : infraEstruturaConcluido -->
+					<div class="cards">
+						<div class="prior {cssprior}"> <!-- Esta tag deve conter qualquer uma das seguintes propriedades: prior-urgente/alta/media/baixa -->
+							Chamado {chamadoId}
+							<div class="direita">
+								{chamadoAbertura}
+							</div>
+						</div>
+						<strong>{chamadoTitulo}...</strong><br />
+						<div class="descricao">
+							{chamadoDescricao}<br />
+						</div>
+						<div class="cards-bottom">
+							<strong>Solicitante:</strong> {chamadoAutor}<br />
+							<strong>Categoria:</strong> {chamadoCategoria}
+							<div class="direita">
+								<strong>Tipo:</strong> {chamadoTipo}
+							</div>
+						</div>
+					</div>
+					<!-- END BLOCK : infraEstruturaConcluido -->
+				</div>
+				
+				</div>
+				<!-- --------------- ---
+				---- INFRA-ESTRUTURA -->
+				
+				<!-- SISTEMAS +++
+				++++ ++++++++ -->
+				<div id="sistemas">
+				
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 well kanban" id="sistemasAberto">
+					<div class="titulo">
+						Aguardando
+					</div>
+					<!-- START BLOCK : sistemasAberto -->
+					<div class="cards">
+						<div class="prior {cssprior}"> <!-- Esta tag deve conter qualquer uma das seguintes propriedades: prior-urgente/alta/media/baixa -->
+							Chamado {chamadoId}
+							<div class="direita">
+								{chamadoAbertura}
+							</div>
+						</div>
+						<strong>{chamadoTitulo}...</strong><br />
+						<div class="descricao">
+							{chamadoDescricao}<br />
+						</div>
+						<div class="cards-bottom">
+							<strong>Solicitante:</strong> {chamadoAutor}<br />
+							<strong>Categoria:</strong> {chamadoCategoria}
+							<div class="direita">
+								<strong>Tipo:</strong> {chamadoTipo}
+							</div>
+						</div>
+					</div>
+					<!-- END BLOCK : sistemasAberto -->
+				</div>
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 well kanban" id="sistemasAndamento">
+					<div class="titulo">
+						Em andamento
+					</div>
+					<!-- START BLOCK : sistemasAndamento -->
+					<div class="cards">
+						<div class="prior {cssprior}"> <!-- Esta tag deve conter qualquer uma das seguintes propriedades: prior-urgente/alta/media/baixa -->
+							Chamado {chamadoId}
+							<div class="direita">
+								{chamadoAbertura}
+							</div>
+						</div>
+						<strong>{chamadoTitulo}...</strong><br />
+						<div class="descricao">
+							{chamadoDescricao}<br />
+						</div>
+						<div class="cards-bottom">
+							<strong>Solicitante:</strong> {chamadoAutor}<br />
+							<strong>Categoria:</strong> {chamadoCategoria}
+							<div class="direita">
+								<strong>Tipo:</strong> {chamadoTipo}
+							</div>
+						</div>
+					</div>
+					<!-- END BLOCK : sistemasAndamento -->
+				</div>
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 well kanban" id="sistemasConcluido">
+					<div class="titulo">
+						Concluído
+					</div>
+					<!-- START BLOCK : sistemasConcluido -->
+					<div class="cards">
+						<div class="prior {cssprior}"> <!-- Esta tag deve conter qualquer uma das seguintes propriedades: prior-urgente/alta/media/baixa -->
+							Chamado {chamadoId}
+							<div class="direita">
+								{chamadoAbertura}
+							</div>
+						</div>
+						<strong>{chamadoTitulo}...</strong><br />
+						<div class="descricao">
+							{chamadoDescricao}<br />
+						</div>
+						<div class="cards-bottom">
+							<strong>Solicitante:</strong> {chamadoAutor}<br />
+							<strong>Categoria:</strong> {chamadoCategoria}
+							<div class="direita">
+								<strong>Tipo:</strong> {chamadoTipo}
+							</div>
+						</div>
+					</div>
+					<!-- END BLOCK : sistemasConcluido -->
+				</div>
+				
+				</div>
+				<!-- -------- ---
+				---- SISTEMAS -->
+				
+				<!-- TELEFONIA +++
+				++++ +++++++++ -->
+				<div id="telefonia">
+				
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 well kanban" id="telefoniaAberto">
+					<div class="titulo">
+						Aguardando
+					</div>
+					<!-- START BLOCK : telefoniaAberto -->
+					<div class="cards">
+						<div class="prior {cssprior}"> <!-- Esta tag deve conter qualquer uma das seguintes propriedades: prior-urgente/alta/media/baixa -->
+							Chamado {chamadoId}
+							<div class="direita">
+								{chamadoAbertura}
+							</div>
+						</div>
+						<strong>{chamadoTitulo}...</strong><br />
+						<div class="descricao">
+							{chamadoDescricao}<br />
+						</div>
+						<div class="cards-bottom">
+							<strong>Solicitante:</strong> {chamadoAutor}<br />
+							<strong>Categoria:</strong> {chamadoCategoria}
+							<div class="direita">
+								<strong>Tipo:</strong> {chamadoTipo}
+							</div>
+						</div>
+					</div>
+					<!-- END BLOCK : telefoniaAberto -->
+				</div>
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 well kanban" id="telefoniaAndamento">
+					<div class="titulo">
+						Em andamento
+					</div>
+					<!-- START BLOCK : telefoniaAndamento -->
+					<div class="cards">
+						<div class="prior {cssprior}"> <!-- Esta tag deve conter qualquer uma das seguintes propriedades: prior-urgente/alta/media/baixa -->
+							Chamado {chamadoId}
+							<div class="direita">
+								{chamadoAbertura}
+							</div>
+						</div>
+						<strong>{chamadoTitulo}...</strong><br />
+						<div class="descricao">
+							{chamadoDescricao}<br />
+						</div>
+						<div class="cards-bottom">
+							<strong>Solicitante:</strong> {chamadoAutor}<br />
+							<strong>Categoria:</strong> {chamadoCategoria}
+							<div class="direita">
+								<strong>Tipo:</strong> {chamadoTipo}
+							</div>
+						</div>
+					</div>
+					<!-- END BLOCK : telefoniaAndamento -->
+				</div>
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 well kanban" id="telefoniaConcluido">
+					<div class="titulo">
+						Concluído
+					</div>
+					<!-- START BLOCK : telefoniaConcluido -->
+					<div class="cards">
+						<div class="prior {cssprior}"> <!-- Esta tag deve conter qualquer uma das seguintes propriedades: prior-urgente/alta/media/baixa -->
+							Chamado {chamadoId}
+							<div class="direita">
+								{chamadoAbertura}
+							</div>
+						</div>
+						<strong>{chamadoTitulo}...</strong><br />
+						<div class="descricao">
+							{chamadoDescricao}<br />
+						</div>
+						<div class="cards-bottom">
+							<strong>Solicitante:</strong> {chamadoAutor}<br />
+							<strong>Categoria:</strong> {chamadoCategoria}
+							<div class="direita">
+								<strong>Tipo:</strong> {chamadoTipo}
+							</div>
+						</div>
+					</div>
+					<!-- END BLOCK : telefoniaConcluido -->
+				</div>
+				
+				</div>
+				<!-- --------- ---
+				---- TELEFONIA -->
+				<div style="clear:both; float:none"></div>
+			</div>
+		</div>
+	</div>
+	
+	</div>
+	<!-- ------------------------ ---
+	---- KANBAN CHAMADOS POR ÁREA -->

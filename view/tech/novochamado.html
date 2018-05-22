@@ -1,0 +1,179 @@
+<div id="wrapper">
+
+	<fieldset id="novoChamadoTecnico">
+	
+		<form action="insereChamado.php" method="post" id="novoChamadoTech" name="novoChamadoTech" enctype="multipart/form-data">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+						<label for="novoLogin">Login requerente</label>
+						<div class="input-group">
+							<input type="text" class="form-control" name="novoLogin" id="novoLogin" required>
+							<span class="input-group-btn">
+								<button class="btn btn-default" type="button" id="searchUsuario"><span class="glyphicon glyphicon-search"></span></button>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+						<label for="novoTipo">Tipo</label>
+						<select class="form-control" id="novoTipo" name="novoTipo" required>
+							<option></option>
+							<option value="1">Incidente</option>
+							<option value="2">Ajuste</option>
+							<option value="3">Solicitação</option>
+							<option value="4">Dúvida</option>
+						</select>
+					</div>
+					<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+						<label for="novoArea">Área</label>
+						<select class="form-control" id="novoArea" name="novoArea" required>
+							<option></option>
+							<option value="1">Infra-estrutura</option>
+							<option value="2">Sistemas</option>
+							<option value="3">Telefonia</option>
+						</select>
+					</div>
+					<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+						<label for="novoCategoria">Categoria</label>
+						<a href="#" title="Categorias" data-toggle="popover" data-trigger="focus" 
+							data-content="
+											<strong>Infra-estrutura</strong>
+											<ul>
+												<li><i><strong>Software</strong></i></li>
+													Instalação de programas e aplicativos.
+												<li><i><strong>Rede</strong></i></li>
+													Acesso a TS e internet.
+												<li><i><strong>Acesso</strong></i></li>
+													Criação, redirecionamento e inativação de acessos à rede.
+												<li><i><strong>Impressora</strong></i></li>
+													Configuração de impressoras, substituição de toner/cartucho, etc.
+												<li><i><strong>Hardware</strong></i></li>
+													Equipamentos, como computadores/notebooks, rastreadores, aparelhos celulares e afins.
+												<li><i><strong>Email</strong></i></li>
+													Assuntos relacionados a email, como direcionamento, inativação, falhas, etc.
+											</ul>
+											<strong>Sistemas</strong>
+											<ul>
+												<li><i><strong>Globus</strong></i></li>
+													Acesso e demais assuntos relacionados ao Globus.
+												<li><i><strong>Petroshow</strong></i></li>
+													Acesso e demais assuntos relacionados ao Petroshow.
+												<li><i><strong>Mobile</strong></i></li>
+													Referente a PDAs ou aplicativos.
+												<li><i><strong>BI / Relatórios</strong></i></li>
+													Criação e manutenção de relatórios ou processos de BI.
+												<li><i><strong>Desenvolvimento</strong></i></li>
+													Desenvolvimento de sistemas para execução de rotinas.
+											</ul>
+											<strong>Telefonia</strong>
+											<ul>
+												<li><i><strong>Crédito extra</strong></i></li>
+													Solicitação de créditos adicionais.
+												<li><i><strong>Celular / Chip</strong></i></li>
+													Referente a aparelhos celulares e chips de operadora.
+											</ul>
+							">
+							<span class="glyphicon glyphicon-question-sign"></span>
+						</a>
+						<select class="form-control" id="novoCategoria" name="novoCategoria" required>
+							<option></option>
+							<!-- START BLOCK : chamadoCategorias -->
+							<option value="{categoriaId}" class="{categoriaArea}">{categoriaNome}</option>
+							<!-- END BLOCK : chamadoCategorias -->
+						</select>
+					</div>
+					<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+						<label for="novoPrioridade">Prioridade</label>
+						<select class="form-control" id="novoPrioridade" name="novoPrioridade" required>
+							<option></option>
+							<option value="1">Baixa</option>
+							<option value="2">Média</option>
+							<option value="3">Alta</option>
+							<option value="4">Urgente</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+						<label for="novoTitulo">Título</label>
+						<input type="text" class="form-control" id="novoTitulo" name="novoTitulo" maxlength="50" required>
+					</div>
+					<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+						<label for="novoAnexo">Anexo</label>
+						<a 	href="#" title="<strong>Extensões válidas <span class='pull-right'>Tamanho máximo: 10MB</span></strong>" 
+							data-toggle="popover" data-trigger="focus" 
+							data-content="	<div class='col-xs-4'><ul><li>PNG</li><li>JPG</li><li>HTML</li><li>ZIP</li><li>RAR</li></ul></div><div class='col-xs-4'><ul><li>XLS</li><li>DOC</li><li>PPT</li><li>TXT</li><li>LOG</li></ul></div><div class='col-xs-4'><ul><li>PDF</li><li>RET</li><li>REM</li><li>XML</li></ul></div>">
+							<span class="glyphicon glyphicon-info-sign"></span>
+						</a>
+						<input type="file" id="novoAnexo" name="novoAnexo[]" multiple>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<label for="novoDescricao">Descrição</label>
+						<textarea class="form-control" id="novoDescricao" name="novoDescricao" rows="8" maxlength="2500" required></textarea>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div class="btn-group gtn-group-sm pull-right" role="group" aria-label="...">
+							<input class="btn btn-default" data-toggle="modal" data-target="#confirmaCancelar" type="button" value="Cancelar">
+							<button class="btn btn-default" type="button" id="novoEnviar">Enviar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	
+	</fieldset>
+
+</div>
+
+<div class="modal fade" id="modalUsuarios" tabindex="-1" role="dialog" aria-labelledby="modalUsuarios">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Lista de Usuários</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						<input type="text" class="form-control" id="procuraUser">
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div class="table-responsive">
+							<table class="table table-hover table-condensed table-bordered" id="tableListaUsuarios">
+								<thead>
+									<tr class="active">
+										<th>Nome</th>
+										<th>Emp</th>
+										<th>Filial</th>
+										<th>Setor</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- START BLOCK : listaUsuarios -->
+									<tr id="{funcionarioLogin}" name="{funcNome}">
+										<td>{funcionarioNome}</td>
+										<td>{funcionarioEmpresa}</td>
+										<td>{funcionarioFilial}</td>
+										<td>{funcionarioSetor}</td>
+									</tr>
+									<!-- END BLOCK : listaUsuarios -->
+								</tbody>
+								<tfoot>
+									<tr class="active">
+										<td colspan="4"></td>
+									</tr>
+								</tfoot>
+							</table>
+						</div> <!-- /div_TABLE_RESPONSIVE -->
+					</div> <!-- /div_COL -->
+				</div> <!-- /div_ROW -->
+			</div> <!-- /div_MODAL_BODY -->
+		</div> <!-- /div_MODAL_CONTENT -->
+	</div> <!-- /div_MODAL_DIALOG -->
+</div> <!-- /div_MODAL -->

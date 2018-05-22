@@ -1,0 +1,311 @@
+<div id="wrapper"> <!-- div_WRAPPER -->
+	<fieldset id="acompanhaChamadoTecnico"> <!-- FIELDSET -->
+		<div class="container"> <!-- CONTAINER -->
+			{uploadError}
+			<div class="row"> <!-- row_INFOS_ANEXOS -->
+				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 cinza-bg" id="box"> <!-- col_INFORMAÇÕES -->
+					<div class="row branco-bg">	<!-- row_TITULO -->
+						<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10"> <!-- col_TITULO -->
+							<h3>	<!-- h3_TITULO -->
+								{chamadoTitulo} <small>{chamadoId} | {chamadoStatus}</small>
+							</h3>	<!-- /h3_TITULO -->
+						</div>	<!-- /col_TITULO -->
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">	<!-- col_CONTROLES -->
+								<a class="btn btn-sm btn-default pull-right" id="editaChamado">	<!-- a_EDIÇÃO -->
+									<span class="glyphicon glyphicon-pencil"></span>
+								</a>	<!-- /a_EDIÇÃO -->
+								<button id="pickChamado" class="btn btn-sm btn-success pull-right">	<!-- button_ATRIBUIR -->
+									<span class="glyphicon glyphicon-log-in"></span>
+								</button>	<!-- /button_ATRIBUIR -->
+								<button id="noPickChamado" class="btn btn-sm btn-danger pull-right"> <!-- button_LIBERAR -->
+									<span class="glyphicon glyphicon-log-out"></span>
+								</button> <!-- /button_LIBERAR -->
+								<button id="transfChamado" class="btn btn-sm btn-primary pull-right" data-toggle="modal" data-target="#transfModal"> <!-- button_TRANSFERIR -->
+									<span class="glyphicon glyphicon-send"></span>
+								</button> <!-- /button_TRANSFERIR -->
+						</div> <!-- /col_CONTROLES -->
+					</div>	<!-- /row_TITULO -->
+					
+					<div class="row">	<!-- row_RESP_SLC_DTABT_DTATL -->
+						<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3" id="informacoes"> <!-- col_RESP -->
+							<label>Responsável:</label>
+							{chamadoTecnico}
+						</div>	<!-- /col_RESP -->
+						<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3" id="informacoes"> <!-- col_SLC -->
+							<label>Solicitante:</label>
+							<span title="{chamadoEmpresa}, {chamadoFilial}, {chamadoSetor}">
+								{chamadoSolicitante}
+							</span>
+						</div>	<!-- /col_SLC -->
+						<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3" id="informacoes"> <!-- col_DTABT -->
+							<label>Abertura:</label>
+							{chamadoAbertura}
+						</div>	<!-- /col_DTABT -->
+						<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3" id="informacoes"> <!-- col_DTATL -->
+							<label>Atualização:</label>
+							{chamadoAtualizacao}
+						</div>	<!-- /col_DTATL -->
+						 <div class="clearfix visible-xs"></div>
+					</div>	<!-- /row_RESP_SLC_DTABT_DTATL -->
+					
+					<div class="row alterarOff">	<!-- row_TIPO_AREA_CATEGORIA_PRIORIDADE__ALTERAÇÃO_OFF -->
+						<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3"> <!-- col_TIPO -->
+							<label>Tipo:</label>
+							{chamadoTipo}
+						</div>	<!-- /col_TIPO -->
+						<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3"> <!-- col_AREA -->
+							<label>Área:</label>
+							{chamadoArea}
+						</div> 	<!-- /col_AREA -->
+						<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3"> <!-- col_CATEGORIA -->
+							<label>Categoria:</label>
+							{chamadoCategoria}
+						</div> 	<!-- /col_CATEGORIA -->
+						<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3"> <!-- col_PRIORIDADE -->
+							<label>Prioridade:</label>
+							{chamadoPrioridade}
+						</div> 	<!-- /col_PRIORIDADE -->
+					</div>	<!-- /row_TIPO_AREA_CATEGORIA_PRIORIDADE__ALTERAÇÃO_OFF -->
+					
+					<div class="row alterarOn">	<!-- row_TIPO_AREA_CATEGORIA_PRIORIDADE__ALTERAÇÃO_ON -->
+						<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3"> <!-- col_EDIÇÃO_TIPO -->
+							<label for="editaChamadoTipo">Tipo:</label>
+							<select class="form-control" id="editaChamadoTipo" name="editaChamadoTipo">
+								<option value="1">Incidente		</option>
+								<option value="2">Ajuste		</option>
+								<option value="3">Solicitação	</option>
+								<option value="4">Dúvida		</option>
+							</select>
+							<input type="hidden" name="chamadoTipoID" id="chamadoTipoID" value="{chamadoTipoId}">
+						</div>	<!-- /col_EDIÇÃO_TIPO -->
+						<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3"> <!-- col_EDIÇÃO_AREA -->
+							<label for="editaChamadoArea">Área:</label>
+							<select class="form-control" id="editaChamadoArea" name="editaChamadoArea">
+								<option value="1">Infra-estrutura	</option>
+								<option value="2">Sistemas			</option>
+								<option value="3">Telefonia			</option>
+							</select>
+							<input type="hidden" name="chamadoAreaID" id="chamadoAreaID" value="{chamadoAreaId}">
+						</div> 	<!-- /col_EDIÇÃO_AREA -->
+						<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3"> <!-- col_EDIÇÃO_CATEGORIA -->
+							<label for="editaChamadoCategoria">Categoria:</label>
+							<select class="form-control" id="editaChamadoCategoria" name="editaChamadOCategoria">
+								<!-- START BLOCK : chamadoCategorias -->
+								<option value="{categoriaId}" class="{categoriaArea}">{categoriaNome}</option>
+								<!-- END BLOCK : chamadoCategorias -->
+							</select>
+							<input type="hidden" name="chamadoCategoriaID" id="chamadoCategoriaID" value="{chamadoCategoriaId}">
+						</div> 	<!-- /col_EDIÇÃO_CATEGORIA -->
+						<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3"> <!-- col_EDIÇÃO_PRIORIDADE -->
+							<label for="editaChamadoPrioridade">Prioridade:</label>
+							<select class="form-control" id="editaChamadoPrioridade" name="editaChamadoPrioridade">
+								<option value="1">Baixa		</option>
+								<option value="2">Média		</option>
+								<option value="3">Alta		</option>
+								<option value="4">Urgente	</option>
+							</select>
+							<input type="hidden" name="chamadoPrioridadeID" id="chamadoPrioridadeID" value="{chamadoPrioridadeId}">
+						</div> 	<!-- /col_EDIÇÃO_PRIORIDADE -->
+					</div> <!-- /row_TIPO_AREA_CATEGORIA_PRIORIDADE__ALTERAÇÃO_ON -->
+					<div class="row alterarOn"> <!-- row_EDIÇÃO_BOTOES -->
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> <!-- col_EDIÇÃO_BOTOES -->
+							<div class="btn-group btn-group-xs pull-right" role="group" aria-label="..."> <!-- div_EDIÇÃO_BOTÃO_AGRUP -->
+								<button class="btn btn-default" type="button" id="editaCancela">Cancelar</button>
+								<button class="btn btn-default" type="button" id="editaSalvar">Salvar</button>
+							</div> <!-- /div_EDIÇÃO_BOTÃO_AGRUP -->
+						</div> <!-- /col_EDIÇÃO_BOTOES -->
+					</div> <!-- row_EDIÇÃO_BOTOES -->
+					
+					<div class="row"> <!-- row_DESCRIÇÃO -->
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 descricao-scroll"> <!-- col_DESCRIÇÃO -->
+							<label>Descrição:</label>
+							{chamadoDescricao}
+						</div>	<!-- /col_DESCRIÇÃO -->
+					</div>	<!-- /row_DESCRIÇÃO -->
+					
+				</div>	<!-- /col_INFORMAÇÕES -->
+				
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" id="box"> <!-- col_ANEXOS -->
+					<div class="row"> <!-- row_ANEXOS -->
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<h3>Anexos</h3>
+						</div>
+					</div>	<!-- /row_ANEXOS -->
+					
+					<div class="row"> <!-- row_LISTA_ANEXOS -->
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> <!-- col_TABLE -->
+							<table class="table table-bordered table-condensed"> <!-- table_HEADER -->
+								<thead>
+									<tr class="active">
+										<th width="75px">Data</th>
+										<th>Arquivo</th>
+									</tr>
+								</thead>
+							</table> <!-- /table_HEADER -->
+							<div class="anexo-scroll"> <!-- div_ANEXO_SCROLL -->
+								<table class="table table-bordered table-condensed"> <!-- table_CONTEUDO -->
+									<tbody>
+										<!-- START BLOCK : chamadoAnexo -->
+										<tr>
+											<td width="75px">{chamadoAnexoData}</td>
+											<td><a href="{chamadoAnexoDiretorio}" target="_blank">{chamadoAnexoArquivo}</a></td>
+										</tr>
+										<!-- END BLOCK : chamadoAnexo -->
+									</tbody>
+									<tfoot>
+										<tr class="active">
+											<td colspan="2"></td>
+										</tr>
+									</tfoot>
+								</table> <!-- /table_CONTEUDO -->
+							</div> <!-- /div_ANEXO_SCROLL -->
+						</div>	<!-- /col_TABLE -->
+					</div> <!-- /row_LISTA_ANEXOS -->
+				</div>	<!-- /col_ANEXOS -->
+			</div>	<!-- /row_INFOS_ANEXOS -->
+			
+			<div class="row"> <!-- row_INTERAÇÕES -->
+				<span class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="box"> <!-- col_INTERAÇÕES -->
+					<div class="row"> <!-- row_COMENTARIOS -->
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> <!-- col_COMENTARIOS -->
+							<h3>Comentários</h3>
+						</div>	<!-- /col_COMENTARIOS -->
+					</div> <!-- /row_COMENTARIOS -->
+					
+					<div class="row"> <!-- row_LISTA_COMENTARIOS -->
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> <!-- col_COMENT_TABLE -->
+							<div class="coment-scroll table-responsive"> <!-- div_COMENT_SCROLL -->
+								<table class="table table-bordered table-condensed"> <!-- table_COMENT -->
+									<thead>
+										<tr class="active">
+											<th width="5%">Data</th>
+											<th width="10%">Responsável</th>
+											<th>Comentário</th>
+										</tr>
+									</thead>
+									<tbody>
+										<!-- START BLOCK : chamadoComentario -->
+										<tr {solucao}>
+											<td>{comentarioData}</td>
+											<td>{comentarioResponsavel}</td>
+											<td>{comentarioTexto}</td>
+										</tr>
+										<!-- END BLOCK : chamadoComentario -->
+									</tbody>
+									<tfoot>
+										<tr class="active">
+											<td colspan="3"></td>
+										</tr>
+									</tfoot>
+								</table> <!-- /table_COMENT -->
+							</div> <!-- /div_COMENT_SCROLL -->
+						</div> <!-- /col_COMENT_TABLE -->
+					</div> <!-- /row_LISTA_COMENTARIOS -->
+					
+					<div class="row"> <!-- row_NOVA_INTERACAO -->
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 novaInteracao">
+							<button class="btn btn-sm btn-default pull-right" data-toggle="modal" data-target="#novoComentario">Nova interação</button>
+						</div>
+					</div>	<!-- /row_NOVA_INTERACAO -->
+					
+				</span>	<!-- /col_INTERAÇÕES -->
+			</div>	<!-- /row_INTERAÇÕES -->
+			
+
+
+		</div>	<!-- /CONTAINER -->
+		<input type="hidden" id="token" value="{token}">
+		<input type="hidden" id="chamadoStatusID" value="{chamadoStatusId}">
+		<input type="hidden" id="usernameTecnico" value="{usernameTecnico}">
+	</fieldset> <!-- /FIELDSET -->
+</div> <!-- /div_WRAPPER -->
+
+<div class="modal fade" id="novoComentario" tabindex="-1" role="dialog" aria-labelledby="novoComentarioModal"> <!-- div_MODAL -->
+	<div class="modal-dialog" role="document"> <!-- div_MODAL_DIALOG -->
+		<div class="modal-content"> <!-- div_MODAL_CONTENT -->
+			<div class="modal-header"> <!-- div_MODAL_HEADER -->
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Nova interação</h4>
+			</div> <!-- /div_MODAL_HEADER -->
+			<form action="" method="post" id="novoInteracaoTech" name="novoInteracaoTech" enctype="multipart/form-data"> <!-- form_INTERACAO -->
+				<!-- ACTION definida pelo JS -->
+				<input type="hidden" name="token" value="{token}">
+				<div class="modal-body"> <!-- div_MODAL_BODY -->
+					<div class="row" id="distance"> <!-- row_INT_ANEXOS -->
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 cinza-bg">
+							<label for="inserirAnexo">Anexo</label> 
+							<a 	href="#" title="<strong>Extensões válidas <span class='pull-right'>Tamanho máximo: 10MB</span></strong>" 
+								data-toggle="popover" data-trigger="focus" 
+								data-content="	<div class='col-xs-4'><ul><li>PNG</li><li>JPG</li><li>HTML</li><li>ZIP</li><li>RAR</li></ul></div><div class='col-xs-4'><ul><li>XLS</li><li>DOC</li><li>PPT</li><li>TXT</li><li>LOG</li></ul></div><div class='col-xs-4'><ul><li>PDF</li><li>RET</li><li>REM</li><li>XML</li></ul></div>">
+								<span class="glyphicon glyphicon-info-sign"></span>
+							</a>
+							<input type="file" class="pull-right" id="inserirAnexo" name="inserirAnexo[]" multiple>
+						</div>
+					</div> <!-- row_INT_ANEXOS -->
+					
+					<div class="row"> <!-- row_INT_COMENTARIO -->
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 cinza-bg">
+							<label for="inserirComentario">Comentário</label>
+						</div>
+					</div> <!-- /row_INT_COMENTARIO -->
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<textarea class="form-control" id="inserirComentario" name="inserirComentario" rows="8"></textarea>
+						</div>
+					</div>
+				</div> <!-- /div_MODAL_BODY -->
+				<div class="modal-footer"> <!-- div_MODAL_FOOTER -->
+					<div class="btn-group btn-group-sm pull-left" role="group" aria-label="...">
+						<button class="btn btn-success" type="button" name="concluirChamado" id="concluirChamado">
+							<span class="glyphicon glyphicon-ok"></span>
+						</button>
+					</div>
+					<div class="btn-group" role="group" aria-label="...">
+						<button class="btn btn-sm btn-default" data-dismiss="modal">Cancelar</button>
+						<button class="btn btn-sm btn-default" type="button" name="enviarComentario" id="enviarComentario"><strong>Enviar</strong></button>
+					</div>
+				</div> <!-- /div_MODAL_FOOTER -->
+			</form> <!-- /form_INTERACAO -->
+		</div> <!-- /div_MODAL_CONTENT -->
+	</div> <!-- /div_MODAL_DIALOG -->
+</div> <!-- /div_MODAL -->
+
+<div class="modal fade" id="transfModal" tabindex="-1" role="dialog" aria-labelledby="transfAreaModal"> <!-- div_MODAL -->
+	<div class="modal-dialog" role="document"> <!-- div_MODAL_DIALOG -->
+		<div class="modal-content"> <!-- div_MODAL_CONTENT -->
+			<div class="modal-header"> <!-- div_MODAL_HEADER -->
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title"><span class="glyphicon glyphicon-send"></span> Transferir chamado</h4>
+			</div> <!-- /div_MODAL_HEADER -->
+			
+				<div class="modal-body"> <!-- div_MODAL_BODY -->
+					<div class="row">
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<label for="transfereChamadoArea"><strong>Área</strong></label>
+							<select class="form-control" id="transfereChamadoArea" name="transfereChamadoArea">
+								<option></option>
+								<option value="1" class="A1">Infra-estrutura</option>
+								<option value="2" class="A2">Sistemas</option>
+								<option value="3" class="A3">Telefonia</option>
+							</select>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<label for="transfereChamadoCategoria"><strong>Categoria</strong></label>
+							<select class="form-control" id="transfereChamadoCategoria" name="transfereChamadoCategoria">	
+								<option></option>
+								<!-- START BLOCK : chamadoCategoriasTransf -->
+								<option value="{categoriaId}" class="T{categoriaArea}">{categoriaNome}</option>
+								<!-- END BLOCK : chamadoCategoriasTransf -->
+							</select>
+						</div>
+					</div>
+				</div> <!-- /div_MODAL_BODY -->
+				<div class="modal-footer"> <!-- div_MODAL_FOOTER -->
+					<div class="btn-group" role="group" aria-label="...">
+						<button class="btn btn-sm btn-default" data-dismiss="modal">Cancelar</button>
+						<button class="btn btn-sm btn-default" id="transferirChamado" name="transferirChamado"><strong>Transferir</strong></button>
+					</div>
+				</div> <!-- /div_MODAL_FOOTER -->
+		</div> <!-- /div_MODAL_CONTENT -->
+	</div> <!-- /div_MODAL_DIALOG -->
+</div> <!-- /div_MODAL -->

@@ -1,0 +1,55 @@
+IDs:
+
+DIV
+	wrapper						Conteudo
+	
+	alterarOn					Exibe os campos passíveis de edição
+	alterarOnBtn 				Exibe os botões para cancelar/salvar a edição
+	alterarOff					Mostra os campos definidos no chamado
+	chamadoComentario 			Exibe o quadro de comentários
+	novoComentario				Modal para criar novo comentário
+
+FIELDSET
+	acompanhaChamadoUsuario		Contem todo bloco de informações do chamado
+	novoChamadoUsuario			Contem todo bloco de informações para criação de chamado
+	
+FORM
+	editaChamado				Botão para habilitar a edição do chamado
+	editaChamadoTipo			Select para edição do tipo do chamado
+	editaChamadoArea			Select para edição da área do chamado
+	editaChamadoInfra			Select para edição da categoria INFRA
+	editaChamadoSistemas		Select para edição da categoria SISTEMAS
+	editaChamadoTelefonia		Select para edição da categoria TELEFONIA
+	editaChamadoPrioridade		Select para edição da prioridade do chamado
+	
+	editaCancela				Botão para cancelar a edição do chamado
+	editaSalvar					Botão para salvar as alterações no chamado
+	
+	inserirAnexo				Abre o Windows Explorer para selecionar algum arquivo
+	inserirComentario			Textbox onde é feito o comentário
+	
+	concluirChamado				Botão responsável por concluir o chamado (comentário obrigatório)
+	enviarComentario			Botão responsável por enviar o comentário/anexo
+	
+	novoLogin					Input para inserir o login do requerente
+	novoTipo					Select tipo do novo chamado
+	novoArea					Select area do novo chamado
+	novoCategoria				Select categoria do novo chamado
+	novoPrioridade				Select prioridade do novo chamado
+	novoTitulo					Input para inserir o titulo do novo chamado
+	novoAnexo					Input para incluir um anexo no novo chamado
+	
+	novoEnviar					Botão responsável por enviar o chamado
+	
+	filtroId					Input para inserir o ID do chamado que se procura
+	filtroStatus				Checkbox-select para status do filtro
+	filtroEmpresa				Checkbox-select para empresa do filtro
+	filtroFilial				Checkbox-select para filial do filtro
+	filtroSetor					Checkbox-select para setor do filtro
+	filtroTipo					Checkbox-select para tipo de chamado no filtro
+	filtroArea					Checkbox-select para area do chamado no filtro
+	filtroCategoria				Checkbox-select para categoria do chamado no filtro
+	
+	filtroEnviar				Botao responsável por enviar os filtros
+	
+	

@@ -1,0 +1,51 @@
+<div class="modal fade" id="modalUsuarios" tabindex="-1" role="dialog" aria-labelledby="modalUsuarios">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Lista de Usu?rios</h4>
+			</div>
+			<div class="modal-body">
+				
+					<div class="row">
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+							<input type="text" class="form-control" id="procuraUser">
+						</div>
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<table class="table table-hover table-condensed table-bordered">
+								<thead>
+									<tr class="active">
+										<th></th>
+										<th>Nome</th>
+										<th>Empresa</th>
+										<th>Filial</th>
+										<th>Setor</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- START BLOCK : listaUsuarios -->
+									<tr>
+										<td><input type="radio" value="{funcionarioLogin}"></td>
+										<td>{funcionarioNome}</td>
+										<td>{funcionarioEmpresa}</td>
+										<td>{funcionarioFilial}</td>
+										<td>{funcionarioSetor}</td>
+									</tr>
+									<!-- END BLOCK : listaUsuarios -->
+								</tbody>
+								<tfoot>
+									<tr class="active">
+										<td colspan="5"></td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+				
+			</div>
+			<div class="modal-footer">
+			
+			</div>
+		</div>
+	</div>
+</div>

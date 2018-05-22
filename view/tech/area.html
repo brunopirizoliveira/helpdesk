@@ -1,0 +1,247 @@
+<meta http-equiv="refresh" content="90">
+
+<div id="wrapper">
+
+	<div class="container">
+
+	<!-- Filtros -->
+		<div class="row">
+			<form action="area.php" method="post">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="well">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<div class="col-xs-12 col-sm-1H col-md-1H col-lg-1H">
+								<input type="number" min="0" class="form-control" id="filtroId" name="filtroId" placeholder="Chamado"/>
+							</div>
+							<div class="hidden-xs col-sm-1H col-md-1H col-lg-1H">
+								<select class="form-control" name="filtroStatus[]" id="filtroStatus" multiple>
+									<option value="1">Aberto		</option>
+									<option value="2">Atendimento	</option>
+									<option value="3">Concluído		</option>
+								</select>
+							</div>
+							<div class="hidden-xs col-sm-1H col-md-1H col-lg-1H">
+								<select class="form-control" name="filtroEmpresa[]" id="filtroEmpresa" multiple>
+									<option value="1">HS</option>	<!-- Henrique Stefani -->
+									<option value="2">QD</option>	<!-- Querodiesel -->
+								</select>
+							</div>
+							<div class="hidden-xs col-sm-1H col-md-1H col-lg-1H">
+								<select class="form-control" name="filtroFilial[]" id="filtroFilial" multiple>
+									<option value="1">	Matriz			</option>	<!-- HS/QD -->
+									<option value="7">	Santo Andre		</option>	<!-- HS -->
+									<option value="8">	Simoes Filho	</option>	<!-- HS -->
+									<option value="11">	Araucaria		</option>	<!-- HS -->
+									<option value="14">	Duque de Caxias	</option>	<!-- HS -->
+									<option value="20">	Limeira			</option>	<!-- HS -->
+									<option value="2">	Cachoeira do Sul</option>	<!-- QD -->
+									<option value="3">	Dom Pedrito		</option>	<!-- QD -->
+								</select>
+							</div>
+							<div class="hidden-xs col-sm-1H col-md-1H col-lg-1H">
+								<select class="form-control" name="filtroSetor[]" id="filtroSetor" multiple>
+									<option value="1">	Faturamento		</option>
+									<option value="2">	RH				</option>
+									<option value="3">	TI				</option>
+									<option value="4">	Contabilidade	</option>
+									<option value="5">	Comercial		</option>
+									<option value="6">	Suprimentos		</option>
+									<option value="7">	Manutencao		</option>
+									<option value="8">	Seguranca		</option>
+									<option value="9">	Cobranca		</option>
+									<option value="10">	Insumos			</option>
+									<option value="11">	Administrativo	</option>
+									<option value="12">	Juridico		</option>
+									<option value="13">	Controladoria	</option>
+									<option value="14">	Agregados		</option>
+									<option value="15">	Operacoes		</option>
+									<option value="16">	Telemarketing	</option>
+									<option value="17">	CCO				</option>
+									<option value="18">	Logistica		</option>
+									<option value="19">	Diretoria		</option>
+									<option value="20">	Financeiro		</option>
+									<option value="21"> Outros			</option>
+								</select>
+							</div>
+							<div class="hidden-xs col-sm-1H col-md-1H col-lg-1H">
+								<select class="form-control" name="filtroTipo[]" id="filtroTipo" multiple>
+									<option value="1">Incidente		</option>
+									<option value="2">Ajuste		</option>
+									<option value="3">Solicitação	</option>
+									<option value="4">Dúvida		</option>
+								</select>
+							</div>
+							<div class="hidden-xs col-sm-1H col-md-1H col-lg-1H">
+								<select class="form-control" name="filtroCategoria[]" id="filtroCategoria" multiple>
+									<option value="1">	Software		</option>
+									<option value="2">	Rede			</option>
+									<option value="3">	Acesso			</option>
+									<option value="4">	Impressora		</option>
+									<option value="5">	Hardware		</option>
+									<option value="6">	Globus			</option>
+									<option value="7">	Petroshow		</option>
+									<option value="8">	Mobile			</option>
+									<option value="9">	BI / Relatorios	</option>
+									<option value="10">	Desenvolvimento	</option>
+									<option value="11">	Credito Extra	</option>
+									<option value="12">	Celular / Chip	</option>
+									<option value="21">	Email			</option>
+								</select>
+							</div>
+							<div class="col-xs-12 col-sm-1H col-md-1H col-lg-1H">
+								<button type="submit" id="filtroEnviar" class="btn btn-default form-control">Filtrar</button>
+							</div>
+						</div>
+						<div style="clear:both; float:none"></div>
+					</div>
+				</div>
+			</form>
+		</div>	
+	<!-- /Filtros -->
+	
+	<!-- Chamados -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div id="tabs">
+					<ul>
+						<li class="col-xs-6 col-sm-2 no-margin"><a class="col-xs-12" href="#infraEstrutura">Infra-estrutura</a></li>
+						<li class="col-xs-6 col-sm-2 no-margin"><a class="col-xs-12" href="#sistemas">Sistemas</a></li>
+						<li class="col-xs-12 col-sm-2"><a class="col-xs-12" href="#telefonia">Telefonia</a></li>
+					</ul>
+					<div id="infraEstrutura">
+						<div class="table-responsive">
+							<table id="tableInfraestruturaAcompanhamento" class="table table-hover table-condensed table-bordered table-striped">
+								<thead>
+									<tr class="active">
+										<th>ID</th>
+										<th>Título</th>
+										<th>Abertura</th>
+										<th>Atualização</th>
+										<th>Requerente</th>
+										<th>Urgencia</th>
+										<th>Tipo</th>
+										<th>Status</th>
+										<th width="25%">Descrição</th>
+										<th>Categoria</th>
+										<th>Técnico</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- START BLOCK : infraAcompanhamento -->
+									<tr {solucao} id="{chamadoToken}">
+										<td>{chamadoId}</td>
+										<td>{chamadoTitulo}</td>
+										<td>{chamadoAbertura}</td>
+										<td>{chamadoAtualizacao}</td>
+										<td>{chamadoSolicitante}</td>
+										<td>{chamadoPrioridade}</td>
+										<td>{chamadoTipo}</td>
+										<td>{chamadoStatus}</td>
+										<td>{chamadoDescricao}</td>
+										<td>{chamadoCategoria}</td>
+										<td>{chamadoTecnico}</td>
+									</tr>
+									<!-- END BLOCK : infraAcompanhamento -->
+								</tbody>
+								<tfoot>
+									<tr class="active">
+										<td colspan="11"></td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+					<div id="sistemas">
+						<div class="table-responsive">
+							<table id="tableSistemasAcompanhamento" class="table table-hover table-condensed table-bordered table-striped">
+								<thead>
+									<tr class="active">
+										<th>ID</th>
+										<th>Título</th>
+										<th>Abertura</th>
+										<th>Atualização</th>
+										<th>Requerente</th>
+										<th>Urgencia</th>
+										<th>Tipo</th>
+										<th>Status</th>
+										<th width="25%">Descrição</th>
+										<th>Categoria</th>
+										<th>Técnico</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- START BLOCK : sistemasAcompanhamento -->
+									<tr {solucao} id="{chamadoToken}">
+										<td>{chamadoId}</td>
+										<td>{chamadoTitulo}</td>
+										<td>{chamadoAbertura}</td>
+										<td>{chamadoAtualizacao}</td>
+										<td>{chamadoSolicitante}</td>
+										<td>{chamadoPrioridade}</td>
+										<td>{chamadoTipo}</td>
+										<td>{chamadoStatus}</td>
+										<td>{chamadoDescricao}</td>
+										<td>{chamadoCategoria}</td>
+										<td>{chamadoTecnico}</td>
+									</tr>
+									<!-- END BLOCK : sistemasAcompanhamento -->
+								</tbody>
+								<tfoot>
+									<tr class="active">
+										<td colspan="11"></td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+					<div id="telefonia">
+						<div class="table-responsive">
+							<table id="tableTelefoniaAcompanhamento" class="table table-hover table-condensed table-bordered table-striped">
+								<thead>
+									<tr class="active">
+										<th>ID</th>
+										<th>Título</th>
+										<th>Abertura</th>
+										<th>Atualização</th>
+										<th>Requerente</th>
+										<th>Urgencia</th>
+										<th>Tipo</th>
+										<th>Status</th>
+										<th width="25%">Descrição</th>
+										<th>Categoria</th>
+										<th>Técnico</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- START BLOCK : telefoniaAcompanhamento -->
+									<tr {solucao} id="{chamadoToken}">
+										<td>{chamadoId}</td>
+										<td>{chamadoTitulo}</td>
+										<td>{chamadoAbertura}</td>
+										<td>{chamadoAtualizacao}</td>
+										<td>{chamadoSolicitante}</td>
+										<td>{chamadoPrioridade}</td>
+										<td>{chamadoTipo}</td>
+										<td>{chamadoStatus}</td>
+										<td>{chamadoDescricao}</td>
+										<td>{chamadoCategoria}</td>
+										<td>{chamadoTecnico}</td>
+									</tr>
+									<!-- END BLOCK : telefoniaAcompanhamento -->
+								</tbody>
+								<tfoot>
+									<tr class="active">
+										<td colspan="11"></td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- /Chamados -->
+	
+	</div>
+
+</div>

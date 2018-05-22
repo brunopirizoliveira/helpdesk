@@ -1,0 +1,258 @@
+<div id="wrapper"> <!-- div_WRAPPER -->
+	<fieldset id="acompanhaChamadoUsuario"> <!-- FIELDSET -->
+		<div class="container"> <!-- CONTAINER -->
+			{uploadError}
+			<div class="row"> <!-- row_INFOS_ANEXOS -->
+				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 cinza-bg" id="box"> <!-- col_INFORMAÇÕES -->
+					<div class="row branco-bg">	<!-- row_TITULO -->
+						<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10"> <!-- col_TITULO -->
+							<h3>	<!-- h3_TITULO -->
+								{chamadoTitulo} <small>{chamadoId} | {chamadoStatus}</small>
+							</h3>	<!-- /h3_TITULO -->
+						</div>	<!-- /col_TITULO -->
+					</div>	<!-- /row_TITULO -->
+					
+					<div class="row">	<!-- row_RESP_SLC_DTABT_DTATL -->
+						<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3" id="informacoes"> <!-- col_RESP -->
+							<label>Responsável:</label>
+							{chamadoTecnico}
+						</div>	<!-- /col_RESP -->
+						<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3" id="informacoes"> <!-- col_SLC -->
+							<label>Solicitante:</label>
+							{chamadoSolicitante}
+						</div>	<!-- /col_SLC -->
+						<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3" id="informacoes"> <!-- col_DTABT -->
+							<label>Abertura:</label>
+							{chamadoAbertura}
+						</div>	<!-- /col_DTABT -->
+						<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3" id="informacoes"> <!-- col_DTATL -->
+							<label>Atualização:</label>
+							{chamadoAtualizacao}
+						</div>	<!-- /col_DTATL -->
+						 <div class="clearfix visible-xs"></div>
+					</div>	<!-- /row_RESP_SLC_DTABT_DTATL -->
+					
+					<div class="row">	<!-- row_TIPO_AREA_CATEGORIA_PRIORIDADE -->
+						<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3"> <!-- col_TIPO -->
+							<label>Tipo:</label>
+							{chamadoTipo}
+						</div>	<!-- /col_TIPO -->
+						<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3"> <!-- col_AREA -->
+							<label>Área:</label>
+							{chamadoArea}
+						</div> 	<!-- /col_AREA -->
+						<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3"> <!-- col_CATEGORIA -->
+							<label>Categoria:</label>
+							{chamadoCategoria}
+						</div> 	<!-- /col_CATEGORIA -->
+						<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3"> <!-- col_PRIORIDADE -->
+							<label>Prioridade:</label>
+							{chamadoPrioridade}
+						</div> 	<!-- /col_PRIORIDADE -->
+					</div>	<!-- /row_TIPO_AREA_CATEGORIA_PRIORIDADE -->
+					
+					<div class="row"> <!-- row_DESCRIÇÃO -->
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 descricao-scroll"> <!-- col_DESCRIÇÃO -->
+							<label>Descrição:</label>
+							{chamadoDescricao}
+						</div>	<!-- /col_DESCRIÇÃO -->
+					</div>	<!-- /row_DESCRIÇÃO -->
+					
+				</div>	<!-- /col_INFORMAÇÕES -->
+				
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" id="box"> <!-- col_ANEXOS -->
+					<div class="row"> <!-- row_ANEXOS -->
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<h3>Anexos</h3>
+						</div>
+					</div>	<!-- /row_ANEXOS -->
+					
+					<div class="row"> <!-- row_LISTA_ANEXOS -->
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> <!-- col_TABLE -->
+							<table class="table table-bordered table-condensed"> <!-- table_HEADER -->
+								<thead>
+									<tr class="active">
+										<th width="75px">Data</th>
+										<th>Arquivo</th>
+									</tr>
+								</thead>
+							</table> <!-- /table_HEADER -->
+							<div class="anexo-scroll"> <!-- div_ANEXO_SCROLL -->
+								<table class="table table-bordered table-condensed"> <!-- table_CONTEUDO -->
+									<tbody>
+										<!-- START BLOCK : chamadoAnexo -->
+										<tr>
+											<td width="75px">{chamadoAnexoData}</td>
+											<td><a href="{chamadoAnexoDiretorio}" target="_blank">{chamadoAnexoArquivo}</a></td>
+										</tr>
+										<!-- END BLOCK : chamadoAnexo -->
+									</tbody>
+									<tfoot>
+										<tr class="active">
+											<td colspan="2"></td>
+										</tr>
+									</tfoot>
+								</table> <!-- /table_CONTEUDO -->
+							</div> <!-- /div_ANEXO_SCROLL -->
+						</div>	<!-- /col_TABLE -->
+					</div> <!-- /row_LISTA_ANEXOS -->
+				</div>	<!-- /col_ANEXOS -->
+			</div>	<!-- /row_INFOS_ANEXOS -->
+			
+			<div class="row"> <!-- row_INTERAÇÕES -->
+				<span class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="box"> <!-- col_INTERAÇÕES -->
+					<div class="row"> <!-- row_COMENTARIOS -->
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> <!-- col_COMENTARIOS -->
+							<h3>Comentários</h3>
+						</div>	<!-- /col_COMENTARIOS -->
+					</div> <!-- /row_COMENTARIOS -->
+					
+					<div class="row"> <!-- row_LISTA_COMENTARIOS -->
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> <!-- col_COMENT_TABLE -->
+							<div class="coment-scroll table-responsive"> <!-- div_COMENT_SCROLL -->
+								<table class="table table-bordered table-condensed"> <!-- table_COMENT -->
+									<thead>
+										<tr class="active">
+											<th width="5%">Data</th>
+											<th width="10%">Responsável</th>
+											<th>Comentário</th>
+										</tr>
+									</thead>
+									<tbody>
+										<!-- START BLOCK : chamadoComentario -->
+										<tr {solucao}>
+											<td>{comentarioData}</td>
+											<td>{comentarioResponsavel}</td>
+											<td>{comentarioTexto}</td>
+										</tr>
+										<!-- END BLOCK : chamadoComentario -->
+									</tbody>
+									<tfoot>
+										<tr class="active">
+											<td colspan="3"></td>
+										</tr>
+									</tfoot>
+								</table> <!-- /table_COMENT -->
+							</div> <!-- /div_COMENT_SCROLL -->
+						</div> <!-- /col_COMENT_TABLE -->
+					</div> <!-- /row_LISTA_COMENTARIOS -->
+					
+					<div class="row"> <!-- row_NOVA_INTERACAO -->
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 novaInteracao">
+							<button class="btn btn-sm btn-default pull-right" data-toggle="modal" data-target="#novoComentario">Nova interação</button>
+						</div>
+					</div>	<!-- /row_NOVA_INTERACAO -->
+					
+				</span>	<!-- /col_INTERAÇÕES -->
+			</div>	<!-- /row_INTERAÇÕES -->
+			
+
+
+		</div>	<!-- /CONTAINER -->
+		<input type="hidden" id="token" value="{token}">
+		<input type="hidden" id="chamadoStatusID" value="{chamadoStatusId}">
+	</fieldset> <!-- /FIELDSET -->
+</div> <!-- /div_WRAPPER -->
+
+<div class="modal fade" id="novoComentario" tabindex="-1" role="dialog" aria-labelledby="novoComentarioModal"> <!-- div_MODAL -->
+	<div class="modal-dialog" role="document"> <!-- div_MODAL_DIALOG -->
+		<div class="modal-content"> <!-- div_MODAL_CONTENT -->
+			<div class="modal-header"> <!-- div_MODAL_HEADER -->
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Nova interação</h4>
+			</div> <!-- /div_MODAL_HEADER -->
+			<form action="insereInteracao.php" method="post" id="novoInteracaoUser" name="novoInteracaoUser" enctype="multipart/form-data"> <!-- form_INTERACAO -->
+				<input type="hidden" name="token" value="{token}">
+				<div class="modal-body"> <!-- div_MODAL_BODY -->
+					<div class="row" id="distance"> <!-- row_INT_ANEXOS -->
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 cinza-bg">
+							<label for="inserirAnexo">Anexo</label> 
+							<a 	href="#" title="<strong>Extensões válidas <span class='pull-right'>Tamanho máximo: 10MB</span></strong>" 
+								data-toggle="popover" data-trigger="focus" 
+								data-content="	<div class='col-xs-4'><ul><li>PNG</li><li>JPG</li><li>HTML</li><li>ZIP</li><li>RAR</li></ul></div><div class='col-xs-4'><ul><li>XLS</li><li>DOC</li><li>PPT</li><li>TXT</li><li>LOG</li></ul></div><div class='col-xs-4'><ul><li>PDF</li><li>RET</li><li>REM</li><li>XML</li></ul></div>">
+								<span class="glyphicon glyphicon-info-sign"></span>
+							</a>
+							<input type="file" class="pull-right" id="inserirAnexo" name="inserirAnexo[]" multiple>
+						</div>
+					</div> <!-- row_INT_ANEXOS -->
+					
+					<div class="row"> <!-- row_INT_COMENTARIO -->
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 cinza-bg">
+							<label for="inserirComentario">Comentário</label>
+						</div>
+					</div> <!-- /row_INT_COMENTARIO -->
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<textarea class="form-control" id="inserirComentario" name="inserirComentario" rows="8"></textarea>
+						</div>
+					</div>
+				</div> <!-- /div_MODAL_BODY -->
+				<div class="modal-footer"> <!-- div_MODAL_FOOTER -->
+					<div class="btn-group" role="group" aria-label="...">
+						<button class="btn btn-sm btn-default" data-dismiss="modal">Cancelar</button>
+						<button class="btn btn-sm btn-default" type="submit" name="enviarComentario" id="enviarComentario"><strong>Enviar</strong></button>
+					</div>
+				</div> <!-- /div_MODAL_FOOTER -->
+			</form> <!-- /form_INTERACAO -->
+		</div> <!-- /div_MODAL_CONTENT -->
+	</div> <!-- /div_MODAL_DIALOG -->
+</div> <!-- /div_MODAL -->
+
+<div class="modal fade" id="avaliacaoChamado" tabindex="-1" role="dialog" aria-labelledby="avaliacaoChamadoModal"> <!-- div_MODAL_AVALIACAO -->
+	<div class="modal-dialog" role="document"> <!-- div_MODAL_DIALOG -->
+		<div class="modal-content"> <!-- div_MODAL_CONTENT -->
+			<div class="modal-header"> <!-- div_MODAL_HEADER -->
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Avaliação de conclusão</h4>
+			</div> <!-- /div_MODAL_HEADER -->
+			<div class="modal-body"> <!-- div_MODAL_BODY -->
+				<!-- START BLOCK : chamadoSolucao -->
+				<div class="cinza-bg"> <!-- div_CINZABG -->
+					<div class="row"> <!-- div_ROW -->
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+							<label>Técnico: </label>
+							{solucaoNome}
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+							<label>Data: </label>
+							{solucaoData}
+						</div>
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<label>Solução: </label>
+							{solucaoTexto}
+						</div>
+						<input type="hidden" id="solucaoID" value="{solucaoID}"></input>
+					</div> <!-- /div_ROW -->
+				</div> <!-- /div_CINZABG -->
+				<!-- END BLOCK : chamadoSolucao -->
+				<div class="row"> <!-- div_ROW -->
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<p>Como você avalia a conclusão do chamado?</p>
+					</div>
+				</div> <!-- /div_ROW -->
+				<div class="row"> <!-- div_ROW -->
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<button class="btn btn-success" id="aprovaConclusao"><span class="glyphicon glyphicon-thumbs-up"></span> Aprovar</button>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<button class="btn btn-danger pull-right" id="rejeitaConclusao"><span class="glyphicon glyphicon-thumbs-down"></span> Rejeitar</button>
+					</div>
+				</div> <!-- /div_ROW -->
+				<div id="divMotivoRejeicao">
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<label for="motivoRejeicao">Motivo da rejeição do chamado:</label>
+							<textarea class="form-control" id="motivoRejeicao" minlength="5" maxlength="510" rows="6" required></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<span id="motivoRejeicao_error"></span>
+							<button class="btn btn-danger pull-right" type="button" id="rejeitaConclusaoEnviar"><strong>Confirmar rejeição</strong></button>
+						</div>
+					</div>
+				</div>
+			</div> <!-- /div_MODAL_BODY -->
+		</div><!-- /div_MODAL_CONTENT -->
+	</div> <!-- /div_MODAL_DIALOG -->
+</div> <!-- /div_MODAL_AVALIACAO -->

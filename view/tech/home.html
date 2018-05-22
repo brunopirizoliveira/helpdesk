@@ -1,0 +1,109 @@
+﻿<div id="wrapper">
+
+	<!-- INCLUDE BLOCK : aviso -->
+	
+	<div class="container">
+	<!-- Filtros -->
+		<div class="row">
+			<form action="home.php" method="post">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="well">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<div class="col-xs-12 col-sm-1T col-md-1T col-lg-1T">
+								<input type="number" min="0" class="form-control" id="filtroId" name="filtroId" placeholder="Chamado"/>
+							</div>
+							<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+								<select class="form-control" name="filtroStatus[]" id="filtroStatus" multiple>
+									<option value="1">Aberto		</option>
+									<option value="2">Atendimento	</option>
+									<option value="3">Concluído		</option>
+								</select>
+							</div>							
+							<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+								<select class="form-control" name="filtroTipo[]" id="filtroTipo" multiple>
+									<option value="1">Incidente		</option>
+									<option value="2">Ajuste		</option>
+									<option value="3">Solicitação	</option>
+									<option value="4">Dúvida		</option>
+								</select>
+							</div>
+							<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+								<select class="form-control" name="filtroArea[]" id="filtroArea" multiple>
+									<option value="1">Infra-estrutura	</option>
+									<option value="2">Sistemas			</option>
+									<option value="3">Telefonia			</option>
+								</select>
+							</div>
+							<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+								<select class="form-control" name="filtroCategoria[]" id="filtroCategoria" multiple>
+									<option value="1">	Software		</option>
+									<option value="2">	Rede			</option>
+									<option value="3">	Acesso			</option>
+									<option value="4">	Impressora		</option>
+									<option value="5">	Hardware		</option>
+									<option value="6">	Globus			</option>
+									<option value="7">	Petroshow		</option>
+									<option value="8">	Mobile			</option>
+									<option value="9">	BI / Relatorios	</option>
+									<option value="10">	Desenvolvimento	</option>
+									<option value="11">	Credito Extra	</option>
+									<option value="12">	Celular / Chip	</option>
+									<option value="21">	Email			</option>
+								</select>
+							</div>
+							<div class="col-xs-12 col-sm-1T col-md-1T col-lg-1T">
+								<button type="submit" id="filtroEnviar" class="btn btn-default form-control">Filtrar</button>
+							</div>
+						</div>
+						<div style="clear:both; float:none"></div>
+					</div>
+				</div>
+			</form>
+		</div>	
+	<!-- /Filtros -->
+	
+	<!-- Acompanhamento -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="table-responsive">
+					<table id="tableTecnicoAcompanhamento" class="table table-hover table-condensed table-bordered table-striped">
+						<thead>
+							<tr class="active">
+								<th>ID</th>
+								<th>Título</th>
+								<th>Abertura</th>
+								<th>Requerente</th>
+								<th>Urgencia</th>
+								<th>Tipo</th>
+								<th>Categoria</th>
+								<th>Status</th>
+								<th width="25%">Descrição</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- START BLOCK : tecnicoAcompanhamento -->
+							<tr {solucao} id="{chamadoToken}">
+								<td>{chamadoId}</td>
+								<td>{chamadoTitulo}</td>
+								<td>{chamadoAbertura}</td>
+								<td>{chamadoSolicitante}</td>
+								<td>{chamadoPrioridade}</td>
+								<td>{chamadoTipo}</td>
+								<td>{chamadoCategoria}</td>
+								<td>{chamadoStatus}</td>
+								<td>{chamadoDescricao}</td>
+							</tr>
+							<!-- END BLOCK : tecnicoAcompanhamento -->
+						</tbody>
+						<tfoot>
+							<tr class="active">
+								<td colspan="9">{noResult}</td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+			</div>
+		</div>
+	<!-- /Acompanhamento -->
+	</div>
+</div>
