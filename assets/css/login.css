@@ -1,0 +1,57 @@
+*{
+	margin: 0px;
+	padding: 0px;	
+}
+
+body{
+	background-color: #F4F4F4;
+}
+
+
+#container_login{
+	padding:30px;
+	width: 220px;
+	height:250px;
+	position:absolute;
+	left:50%;
+	top:10%;
+	margin-left:-110px;
+	border:solid 1px #CCCCCC;
+	border-radius: 10px; /* para todos os browsers recentes (e decentes) */
+    -moz-border-radius: 10px; /* para versões antigas do Mozilla */
+    -webkit-border-radius: 10px;
+    -ms-border-radius: 10px;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+header{
+	padding:10px;
+	height: 60px;
+	width: 100%;
+	background: -webkit-linear-gradient(bottom, #FFF, #F0F0F0);
+	background: -moz-linear-gradient(bottom, #FFF, #F0F0F0);
+	background: -ms-linear-gradient(bottom, #FFF, #F0F0F0);
+	/*
+		background: -webkit-radial-gradient( #FFF, #CCC);
+		background: -moz-radial-gradient( #FFF, #CCC);
+		border:solid 1px #FFFFFF;
+		border-radius: 10px;
+	
+	*/
+}
+
+nav{
+	padding:10px;
+	height: 30px;
+	width: 100%;	
+
+	/*
+		border-bottom:groove 1px #0066FF;
+		background: -moz-radial-gradient(#06F, #F0F0F0);
+	*/
+}
+
+section{
+	min-height:450px;
+	padding:30px;
+}
